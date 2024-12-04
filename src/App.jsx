@@ -22,7 +22,7 @@ function Header (){
 function CoreConcept(props) {
   return (
     <li>
-      <img src={props.img}/>
+      <img src={props.image}/>
       <h3>{props.title}</h3>
       <p>{props.description}</p>
     </li>
@@ -40,10 +40,9 @@ function App() {
             {CORE_CONCEPTS.map((core, idx) => {
               return (
                 <CoreConcept
+                {...core}
                 key={idx}
-                title={core.title}
-                description={core.description}
-                img={core.image}
+                
               />
               )
             })}
