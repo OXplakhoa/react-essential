@@ -1,3 +1,4 @@
+import './Header.css'
 export default function Header() {
   const Descriptions = ["Fundamental", "Crucial", "Core"];
   const rand = (max) => {
