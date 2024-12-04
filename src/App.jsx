@@ -1,4 +1,5 @@
 import componentImg from './assets/components.png';
+import { CORE_CONCEPTS } from './data';
 const Descriptions = ["Fundamental", "Crucial", "Core"]
 const rand = (max) => {
   return Math.floor(Math.random() * (max));
@@ -21,7 +22,7 @@ function Header (){
 function CoreConcept(props) {
   return (
     <li>
-      <img src={props.img} alt={props.title} />
+      <img src={props.img}/>
       <h3>{props.title}</h3>
       <p>{props.description}</p>
     </li>
@@ -36,14 +37,16 @@ function App() {
         <section id="core-concepts">
           <h2>Core Concept</h2>
           <ul>
-            <CoreConcept
-              title="Components"
-              description="The core UI of building block."
-              img={componentImg}
-            />
-            <CoreConcept />
-            <CoreConcept />
-            <CoreConcept />
+            {CORE_CONCEPTS.map((core, idx) => {
+              return (
+                <CoreConcept
+                key={idx}
+                title={core.title}
+                description={core.description}
+                img={core.image}
+              />
+              )
+            })}
           </ul>
         </section>
       </main>
