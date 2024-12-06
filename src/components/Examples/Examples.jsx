@@ -13,7 +13,6 @@ export default function Examples() {
     <>
       <Section title="Examples" id="examples">
         <Tabs
-        ButtonContainer="menu"
           button={
             <>
               <TabButton onClick={() => handleSelect("components")}>Components</TabButton>
